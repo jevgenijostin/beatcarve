@@ -3,7 +3,7 @@ export default defineConfig({
   testDir: "./tests",
   use: {
     baseURL: "http://127.0.0.1:4173/beatcarve/",
-    browserName: "chromium",
+    browserName: "chromium", launchOptions: { args: ["--autoplay-policy=no-user-gesture-required"] },
   },
   webServer: {
     command: "npm run build && npm run preview -- --port 4173",
@@ -13,4 +13,3 @@ export default defineConfig({
   reporter: [["list"], ["html", { open: "never" }]],
   workers: 1,
 });
-

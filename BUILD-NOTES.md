@@ -2,34 +2,43 @@
 
 ## Scope shipped
 
-Headless checkpoint only: Vite/TypeScript scaffold, CI matrix, FFT, log-spectral onset flux, median/MAD peak picking, autocorrelation tempo, phase refinement, dynamic-programming beats, confidence, deterministic Normal/Easy tap charts, licensed acquisition and gate artifacts. No game UI has been started.
+Phase 3–5 game: browser file decode and drop, analysis worker, four-lane canvas, D F J K taps, audio-clock judgments, combo/score/results, tab-blur pause/resume, median calibration with local persistence/reset, tempo and beat-offset controls, Normal/Easy, JSON download, and HMAC demo licensing gating export only. No runtime dependencies, backend, uploads, or hosted audio.
 
 ## Interpretation decisions
 
-- The user's explicit nightly exception overrides the general branch convention: push directly to main, no branch or PR. No attribution trailers.
-- The repository already existed empty with origin configured and main selected; it was not recreated.
-- Gate thresholds and the 3/2 split were recorded in GATE-PROTOCOL.md before real-music analysis.
-- Density is evaluated over half-open 1-second windows. The generator drops weaker candidate events first, then assigns lanes; optional two-note chords must also fit density and spacing.
-- Beat phase has an unavoidable half-time ambiguity on equal pulses. The first detected event anchors the alternating-pulse ambiguity.
-- Synthetic failures led to phase-coherence refinement near the autocorrelation tempo and stronger MAD noise rejection. No acceptance threshold was relaxed.
-- Vitest timeout increased from 5 to 20 seconds for CPU-heavy 44.1 kHz property cases; this is a harness timeout, not an audio performance acceptance threshold.
-- The source catalog's rock track credits a drummer but does not independently establish live playing or mild drift. Report this corpus deficiency.
-- Phase-zero and phase-one work are pushed together after validation; the scaffold remains an empty page.
+- Ada explicitly authorized proceeding with a narrowed claim after the PARTIAL gate: “songs with a clear, steady hip-hop beat, or sparse/minimal percussion.” README/UI identify Griphop and Deliberate Thought as the validated examples and electronic/rock as known failures.
+- A permanent warning beside upload covers unsupported categories even at high confidence. This is the authorized static-note minimum; no unvalidated genre classifier or density threshold was introduced.
+- src/dsp.ts and src/chart.ts remain byte-for-byte unchanged from 8868fe7. No precision/density fixes or gate reruns. The 291 ms Killing Time metric artifact finding is preserved in gate/DIAGNOSIS.md.
+- User authorization overrides the general branch convention: push directly to main, no branch/PR, no attribution trailers.
+- Audio-clock time subtracts baseLatency, outputLatency, and calibration from scheduled playback time. Pause suspends the same AudioContext; rendering never accumulates frame deltas.
+- Tempo and offset edits reuse the worker's cached analysis. Manual tempo controls are bounded to avoid unusable extreme values.
+- Calibration uses 14 taps after two lead-in clicks. Offset and demo license storage are local; demo signing is intentionally inspectable and is not payment security.
+- No chart-performance promise (“about 10 seconds” removed); a six-minute song can take substantially longer than an excerpt. No acceptance threshold changed.
+- All requested gameplay and export features retained. Static category warning chosen instead of heuristic genre detection. Out-of-scope roadmap remains unbuilt.
 
 ## Local verification
 
-Typecheck and lint passed. All 26 Vitest cases passed, and the Chromium scaffold smoke and production build passed. The gate is PARTIAL: Griphop and Deliberate Thought pass both excerpts (2/5); unseen Cut and Run fails, and Bet You Can resolves near 121 BPM versus 92 BPM metadata. See GATE-REPORT.md for every measured row. No real-music fix cycle was used; hold-outs were analyzed only after the implementation was committed. Synthetic tests verify timing and tempo ambiguity. They cannot certify that the charts are fun. That is what the real-music gate and morning human check are for.
-Judgment, fake-clock, calibration, browser file loading and export-schema tests are deferred with their implementations; no claim that these exist.
+Vitest covers frozen DSP/chart invariants plus Perfect/Great boundaries, clock-based judgments independent of frames, median calibration with outliers, export schema, HMAC signatures/tampering/expiry/tier checks, activation/reload/deactivation.
+Playwright uses generated WAV audio through real browser decoding and the real worker; checks controls, confidence, injected-clock keyboard scoring, wrong-time misses, blur pause, results, licensed JSON download, calibration persistence/reset, malformed audio, six-minute cap, and absence of test hooks without ?test=1.
+Final local and hosted results are recorded below after completion.
+
+## Gate result and limits
+
+PARTIAL, 2/5: Griphop and Deliberate Thought pass both excerpts. Killing Time precision is 87.25% / 67.27%; first-window density validity is 78.00%. Cut and Run precision is 43.68% / 59.51%. Bet You Can estimates 120.69 / 120.57 BPM against 92 BPM metadata with confidence 0.03 / 0.04. All frozen measurements remain in GATE-REPORT.md. No independent onset annotations, clean unseen generalization, or verified live/drift corpus provenance.
+
+Synthetic tests verify timing and tempo ambiguity. They cannot certify that the charts are fun. That is what the gate and morning human check are for.
 
 ## Manual-play observations
 
-None. No game UI or human playtest exists at this checkpoint.
+No human playtest or listening claim. Automated browser operation verifies mechanics, not musical feel.
 
 ## What is not verified
 
-Feel, fun, human playability, real-device latency, browser decoding or performance, audio-clock sync, mobile/accessibility, and the complete required corpus's live-drumming provenance.
+Fun, musical accuracy against independent annotation, human playability, real-device latency, Safari/Firefox, and comprehensive accessibility. The narrowed claim remains bounded by two evaluated examples. Calibration cannot repair drift.
 
 ## Deployment
 
-Implementation commit 76f3620 was pushed directly to main. CI run 40949515165 has passed ubuntu-latest; windows-latest has passed typecheck, lint, and tests and is installing Chromium. Final hosted status will be recorded after completion. The copied Pages workflow can publish only the empty scaffold at this stage; this is not a game release.
+Target: https://jevgenijostin.github.io/beatcarve/
+Direct main push and ubuntu-latest/windows-latest CI + Pages verification pending completion of this build.
 
+Local final checks: 40 Vitest tests passed; typecheck, lint, production build, and four Chromium Playwright tests passed. Setup screenshot inspected. The first scoring assertion assumed ten Easy notes; inspection showed nine generated notes and nine Perfect hits, zero misses. The harness now asserts scoring against the generated count (minimum eight), without altering the generator.
