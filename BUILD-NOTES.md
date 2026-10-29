@@ -18,7 +18,7 @@ Headless checkpoint only: Vite/TypeScript scaffold, CI matrix, FFT, log-spectral
 
 ## Local verification
 
-Pending final test and gate results. Synthetic tests verify timing and tempo ambiguity. They cannot certify that the charts are fun. That is what the real-music gate and morning human check are for.
+Typecheck and lint passed. All 26 Vitest cases passed, and the Chromium scaffold smoke and production build passed. The gate is PARTIAL: Griphop and Deliberate Thought pass both excerpts (2/5); unseen Cut and Run fails, and Bet You Can resolves near 121 BPM versus 92 BPM metadata. See GATE-REPORT.md for every measured row. No real-music fix cycle was used; hold-outs were analyzed only after the implementation was committed. Synthetic tests verify timing and tempo ambiguity. They cannot certify that the charts are fun. That is what the real-music gate and morning human check are for.
 Judgment, fake-clock, calibration, browser file loading and export-schema tests are deferred with their implementations; no claim that these exist.
 
 ## Manual-play observations
@@ -31,4 +31,5 @@ Feel, fun, human playability, real-device latency, browser decoding or performan
 
 ## Deployment
 
-Direct main push and CI status will be recorded after validation. The copied Pages workflow can publish only the empty scaffold at this stage; this is not a game release.
+Implementation commit 76f3620 was pushed directly to main. CI run 40949515165 has passed ubuntu-latest; windows-latest has passed typecheck, lint, and tests and is installing Chromium. Final hosted status will be recorded after completion. The copied Pages workflow can publish only the empty scaffold at this stage; this is not a game release.
+
