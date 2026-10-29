@@ -1,3 +1,150 @@
+# BeatCarve — gate fix cycle
+
+To Ada and claude2. **Result: PARTIAL. HALTED before Phase 3.**
+
+Current result: 2/5 complete machine passes. A proven onset-to-note association bug was fixed; the wider claim still fails. Griphop and Deliberate Thought retain full passes. Killing Time and Cut and Run still fail. Bet You Can remains an out-of-scope tempo failure. No README/UI wording or game UI work was performed.
+
+## Diagnosis and scope
+
+See [gate/DIAGNOSIS.md](gate/DIAGNOSIS.md) and the committed Killing Time trace and reproduction script. Diagnosis used Killing Time only and was written before implementation changes. No independent ground-truth onset annotations exist: the frozen reference is internally reproducible detector output, not independently validated musical truth. We cannot certify detector accuracy or conclude a genre limitation from it.
+
+Claude2’s phase hypothesis is not supported by the trace: the 291 ms middle-window jump is a half-beat switch in the strongest onset phase; eighth-grid phase spread is only 16 ms. The frozen drift metric remains unchanged and still fails. Precision failures include both weak-source selection and salient onsets snapped away from their source. The concrete bug accepted those displacements whenever any unrelated onset was nearby. The fix binds the existing 60 ms guard to the originating onset. No thresholds, tempo estimation, autocorrelation, phase logic, or gate metrics changed.
+
+Implementation began at 2026-10-29T20:36:42Z; the single two-line production fix and regression test were completed within minutes, well under the 60-minute cap. No further tuning followed the final evaluation.
+
+This cycle does **not** establish a genre limitation, but neither does it support a “steady-tempo electronic” claim. If Ada and claude2 choose to narrow the claim on the demonstrated passes, the evidence supports **hip-hop and sparse material only**, limited to the evaluated examples. README/UI wording remains their decision.
+
+## Frozen final rerun
+
+Evaluated 2026-10-29T20:38:39.267Z using this commit’s src/chart.ts (all other production analysis code unchanged from the preceding commit). Same five tracks, Normal, first 90 seconds and centered 60 seconds, no trimming, same GATE-PROTOCOL.md thresholds. Cut and Run was evaluated once, only in this final run: **previously seen, not a clean hold-out**. No per-note errors or intermediate analysis from that track informed the fix. No fresh track was added; this run cannot establish unseen generalization. Deliberate Thought was also previously evaluated. Original source/license/checksum information is preserved in the historical report below.
+
+| Track | Category | Complete machine pass |
+|---|---|---|
+| Killing Time | electronic | NO |
+| Griphop | hip-hop | YES |
+| Bet You Can | rock; live/drift unverified | NO |
+| Deliberate Thought | sparse | YES |
+| Cut and Run | electronic — previously seen, not a clean hold-out | NO |
+
+## Current full measured values
+
+Both excerpts must pass every row. Values retain the frozen pass/fail rules, including the confidence row.
+
+### Killing Time
+
+- first: 0.00–90.00 s; estimated 99.99 BPM, DP 100.23 BPM; offset 1.82 ms; 204 notes; analysis/artifact preparation 2.54 s. Thirds phase shifts: 13.97, 10.97, 6.97 ms.
+- middle: 72.03–132.03 s; estimated 100.04 BPM, DP 100.23 BPM; offset 586.11 ms; 165 notes; analysis/artifact preparation 7.10 s. Thirds phase shifts: 0.12, 7.12, -283.88 ms.
+
+| Check | Frozen threshold | First 90 s | Middle 60 s |
+|---|---|---:|---:|
+| Tempo error (BPM) | ≤2 | 0.01 PASS | 0.04 PASS |
+| Estimator disagreement (%) | ≤2 | 0.24 PASS | 0.19 PASS |
+| Thirds phase drift (ms) | ≤30 | 7.00 PASS | 291.00 FAIL |
+| Top-decile coverage (%) | ≥70 | 100.00 PASS | 100.00 PASS |
+| Salient-note precision (%) | ≥80 | 87.25 PASS | 67.27 FAIL |
+| Density-valid windows (%) | ≥90; max ≤5 | 78.00 FAIL | 97.12 PASS |
+| Max same-lane run | ≤3 | 2.00 PASS | 2.00 PASS |
+| Min same-lane gap (ms) | ≥150 | 300.00 PASS | 300.00 PASS |
+| Chord share (%) | ≤10 | 0.00 PASS | 0.00 PASS |
+| Max chord | ≤2 | 1.00 PASS | 1.00 PASS |
+| Min lane share (%) | ≥12 | 25.00 PASS | 24.85 PASS |
+| Max lane share (%) | ≤40 | 25.00 PASS | 25.45 PASS |
+| Confidence | ≥0.50 steady; <0.50 sparse | 0.66 PASS | 0.69 PASS |
+
+### Griphop
+
+- first: 0.00–90.00 s; estimated 90.00 BPM, DP 89.76 BPM; offset 16.06 ms; 234 notes; analysis/artifact preparation 11.40 s. Thirds phase shifts: -333.33, 332.67, -333.33 ms.
+- middle: 73.37–133.37 s; estimated 90.00 BPM, DP 89.76 BPM; offset 316.08 ms; 137 notes; analysis/artifact preparation 7.42 s. Thirds phase shifts: -0.33, -0.33, -0.33 ms.
+
+| Check | Frozen threshold | First 90 s | Middle 60 s |
+|---|---|---:|---:|
+| Tempo error (BPM) | ≤2 | 0.00 PASS | 0.00 PASS |
+| Estimator disagreement (%) | ≤2 | 0.27 PASS | 0.27 PASS |
+| Thirds phase drift (ms) | ≤30 | 0.67 PASS | 0.00 PASS |
+| Top-decile coverage (%) | ≥70 | 100.00 PASS | 100.00 PASS |
+| Salient-note precision (%) | ≥80 | 95.30 PASS | 99.27 PASS |
+| Density-valid windows (%) | ≥90; max ≤5 | 98.88 PASS | 90.51 PASS |
+| Max same-lane run | ≤3 | 2.00 PASS | 1.00 PASS |
+| Min same-lane gap (ms) | ≥150 | 333.00 PASS | 666.00 PASS |
+| Chord share (%) | ≤10 | 0.85 PASS | 0.00 PASS |
+| Max chord | ≤2 | 2.00 PASS | 1.00 PASS |
+| Min lane share (%) | ≥12 | 24.79 PASS | 24.82 PASS |
+| Max lane share (%) | ≤40 | 25.21 PASS | 25.55 PASS |
+| Confidence | ≥0.50 steady; <0.50 sparse | 0.56 PASS | 0.63 PASS |
+
+### Bet You Can
+
+- first: 0.00–90.00 s; estimated 120.69 BPM, DP 121.49 BPM; offset 244.49 ms; 181 notes; analysis/artifact preparation 11.41 s. Thirds phase shifts: 46.43, 112.43, 56.43 ms.
+- middle: 69.13–129.13 s; estimated 120.57 BPM, DP 121.49 BPM; offset 297.15 ms; 118 notes; analysis/artifact preparation 7.54 s. Thirds phase shifts: -52.82, 163.18, -80.82 ms.
+
+| Check | Frozen threshold | First 90 s | Middle 60 s |
+|---|---|---:|---:|
+| Tempo error (BPM) | ≤2 | 28.69 FAIL | 28.57 FAIL |
+| Estimator disagreement (%) | ≤2 | 0.66 PASS | 0.76 PASS |
+| Thirds phase drift (ms) | ≤30 | 66.00 FAIL | 244.00 FAIL |
+| Top-decile coverage (%) | ≥70 | 75.00 PASS | 66.67 FAIL |
+| Salient-note precision (%) | ≥80 | 39.23 FAIL | 42.37 FAIL |
+| Density-valid windows (%) | ≥90; max ≤5 | 98.09 PASS | 95.42 PASS |
+| Max same-lane run | ≤3 | 1.00 PASS | 1.00 PASS |
+| Min same-lane gap (ms) | ≥150 | 870.00 PASS | 995.00 PASS |
+| Chord share (%) | ≤10 | 0.00 PASS | 0.00 PASS |
+| Max chord | ≤2 | 1.00 PASS | 1.00 PASS |
+| Min lane share (%) | ≥12 | 24.86 PASS | 24.58 PASS |
+| Max lane share (%) | ≤40 | 25.41 PASS | 25.42 PASS |
+| Confidence | ≥0.50 steady; <0.50 sparse | 0.03 FAIL | 0.04 FAIL |
+
+### Deliberate Thought
+
+- first: 0.00–90.00 s; estimated 138.00 BPM, DP 138.24 BPM; offset 19.63 ms; 320 notes; analysis/artifact preparation 11.14 s. Thirds phase shifts: -1.39, -0.39, -1.39 ms.
+- middle: 58.73–118.73 s; estimated 138.00 BPM, DP 138.24 BPM; offset 422.10 ms; 200 notes; analysis/artifact preparation 7.59 s. Thirds phase shifts: -1.39, -0.39, -0.39 ms.
+
+| Check | Frozen threshold | First 90 s | Middle 60 s |
+|---|---|---:|---:|
+| Tempo error (BPM) | ≤2 | 0.00 PASS | 0.00 PASS |
+| Estimator disagreement (%) | ≤2 | 0.18 PASS | 0.18 PASS |
+| Thirds phase drift (ms) | ≤30 | 1.00 PASS | 1.00 PASS |
+| Top-decile coverage (%) | ≥70 | 100.00 PASS | 100.00 PASS |
+| Salient-note precision (%) | ≥80 | 82.50 PASS | 83.00 PASS |
+| Density-valid windows (%) | ≥90; max ≤5 | 97.87 PASS | 98.81 PASS |
+| Max same-lane run | ≤3 | 1.00 PASS | 2.00 PASS |
+| Min same-lane gap (ms) | ≥150 | 652.00 PASS | 435.00 PASS |
+| Chord share (%) | ≤10 | 0.63 PASS | 2.00 PASS |
+| Max chord | ≤2 | 2.00 PASS | 2.00 PASS |
+| Min lane share (%) | ≥12 | 25.00 PASS | 25.00 PASS |
+| Max lane share (%) | ≤40 | 25.00 PASS | 25.00 PASS |
+| Confidence | ≥0.50 steady; <0.50 sparse | 0.40 PASS | 0.40 PASS |
+
+### Cut and Run
+
+- first: 0.00–90.00 s; estimated 107.15 BPM, DP 107.39 BPM; offset 0.45 ms; 190 notes; analysis/artifact preparation 10.96 s. Thirds phase shifts: 32.02, 75.02, -6.98 ms.
+- middle: 77.42–137.42 s; estimated 106.92 BPM, DP 107.39 BPM; offset 132.61 ms; 163 notes; analysis/artifact preparation 6.90 s. Thirds phase shifts: 276.42, -173.58, 246.42 ms.
+
+| Check | Frozen threshold | First 90 s | Middle 60 s |
+|---|---|---:|---:|
+| Tempo error (BPM) | ≤2 | 1.85 PASS | 2.08 FAIL |
+| Estimator disagreement (%) | ≤2 | 0.22 PASS | 0.44 PASS |
+| Thirds phase drift (ms) | ≤30 | 82.00 FAIL | 141.17 FAIL |
+| Top-decile coverage (%) | ≥70 | 97.73 PASS | 87.50 PASS |
+| Salient-note precision (%) | ≥80 | 43.68 FAIL | 59.51 FAIL |
+| Density-valid windows (%) | ≥90; max ≤5 | 87.43 FAIL | 97.97 PASS |
+| Max same-lane run | ≤3 | 2.00 PASS | 1.00 PASS |
+| Min same-lane gap (ms) | ≥150 | 560.00 PASS | 1122.00 PASS |
+| Chord share (%) | ≤10 | 1.05 PASS | 0.00 PASS |
+| Max chord | ≤2 | 2.00 PASS | 1.00 PASS |
+| Min lane share (%) | ≥12 | 24.74 PASS | 24.54 PASS |
+| Max lane share (%) | ≤40 | 25.26 PASS | 25.15 PASS |
+| Confidence | ≥0.50 steady; <0.50 sparse | 0.37 FAIL | 0.35 FAIL |
+
+## Interpretation and verification
+
+Bet You Can still estimates approximately 120.7 BPM against published 92 BPM (ratio approximately 1.31, near 4/3). Metrical/subdivision confusion is a plausible hypothesis, not a traced diagnosis in this cycle. Confidence of 0.03–0.04 is **correctly low and honest**; the frozen steady-material acceptance row still says FAIL. No attempt was made to raise confidence or fix its tempo.
+
+Killing Time precision improves from 76.72% to 87.25% (first) and 59.68% to 67.27% (middle), with top-decile coverage unchanged at 100%. Opening density remains 78.00%; the middle drift proxy remains 291 ms. The fixed association guard can remove unsupported notes and reduce coverage/density; those effects are reported without compensating threshold edits. Griphop density falls slightly to 98.88% / 90.51%, still passing; this reduced margin is visible in the tables. Griphop and Deliberate Thought remain complete passes. The gate remains PARTIAL, with no clean hold-out and unresolved rock live/drift provenance. No human listening or annotation verification is claimed.
+
+Reproduce: npm run gate -- --final. Current raw measurements: gate/final-results.json; diagnostic trace: gate/killing-time-diagnosis.json. Local audio artifacts were regenerated and remain uncommitted. A regression test covers a strong source snapping toward an unrelated weak onset. Validation: 27 unit tests, typecheck, lint, production build, and 1 browser scaffold test passed. The diagnostic script is pinned to the pre-fix generator for reproducibility. Changes are committed and pushed directly to main under the explicit user exception; no branch or PR. Hosted CI status is separate from these local checks.
+
+## Historical initial gate (unchanged; not current status)
+
 # BeatCarve — mandatory Phase 2 gate
 
 To Ada and claude2. **Result: PARTIAL. HALTED before Phase 3.**

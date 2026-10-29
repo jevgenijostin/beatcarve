@@ -1,0 +1,966 @@
+{
+  "at": "2026-10-29T20:38:39.267Z",
+  "final": true,
+  "results": [
+    {
+      "track": {
+        "name": "Killing Time",
+        "file": "Killing Time.mp3",
+        "bpm": 100,
+        "role": "tuning",
+        "category": "electronic",
+        "isrc": "USUAN1100570",
+        "sha256": "d69c69faa1ec5f65fc6efed4278e28c3d1b34d8193a2bf06b0fe5a73084f1916",
+        "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Killing%20Time.mp3",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100570",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Killing Time\" Kevin MacLeod (incompetech.com), CC BY 4.0. Gate overlays add analysis clicks and use excerpts."
+      },
+      "excerpts": [
+        {
+          "label": "first",
+          "start": 0,
+          "duration": 90,
+          "elapsedMs": 2535.0748000000003,
+          "artifacts": "gate/artifacts/Killing-Time-first",
+          "bpm": 99.98999999999926,
+          "dpBpm": 100.22727272727202,
+          "knownBpm": 100,
+          "octaveFolded": false,
+          "offsetMs": 1.8223861812193176,
+          "notes": 204,
+          "phasesMs": [
+            13.969996999698017,
+            10.969996999698015,
+            6.969996999698012
+          ],
+          "maxDensity": 5,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 0.01000000000074408,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.23729645691846088,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 7.000000000001894,
+              "pass": true
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 87.25490196078431,
+              "pass": true
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 78.00224466891133,
+              "pass": false
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 300,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.6580149634329805,
+              "pass": true
+            }
+          ],
+          "pass": false
+        },
+        {
+          "label": "middle",
+          "start": 72.034289,
+          "duration": 60,
+          "elapsedMs": 7095.477999999999,
+          "artifacts": "gate/artifacts/Killing-Time-middle",
+          "bpm": 100.03999999999928,
+          "dpBpm": 100.22727272727276,
+          "knownBpm": 100,
+          "octaveFolded": false,
+          "offsetMs": 586.1146747606176,
+          "notes": 165,
+          "phasesMs": [
+            0.11995201919045434,
+            7.119952019190454,
+            -283.88004798080976
+          ],
+          "maxDensity": 5,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 0.0399999999992815,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.18719784813422832,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 291.0000000000025,
+              "pass": false
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 67.27272727272727,
+              "pass": false
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 97.11864406779661,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 300,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.848484848484848,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.454545454545453,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.6919733842822983,
+              "pass": true
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "pass": false
+    },
+    {
+      "track": {
+        "name": "Griphop",
+        "file": "Griphop.mp3",
+        "bpm": 90,
+        "role": "tuning",
+        "category": "hip-hop",
+        "isrc": "USUAN1100413",
+        "sha256": "eb4d53bbf9a87461a5df7a5bc68ea56b45ccfa85bd37c55e3a97b737170e034e",
+        "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Griphop.mp3",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100413",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Griphop\" Kevin MacLeod (incompetech.com), CC BY 4.0. Gate overlays add analysis clicks and use excerpts."
+      },
+      "excerpts": [
+        {
+          "label": "first",
+          "start": 0,
+          "duration": 90,
+          "elapsedMs": 11396.2681,
+          "artifacts": "gate/artifacts/Griphop-first",
+          "bpm": 89.99999999999989,
+          "dpBpm": 89.75576662143844,
+          "knownBpm": 90,
+          "octaveFolded": false,
+          "offsetMs": 16.061423066093038,
+          "notes": 234,
+          "phasesMs": [
+            -333.33333333333377,
+            332.6666666666668,
+            -333.33333333333377
+          ],
+          "maxDensity": 4,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 1.1368683772161603e-13,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.2713704206238299,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 0.6666666666709786,
+              "pass": true
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 95.2991452991453,
+              "pass": true
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 98.87766554433222,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 333,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0.8547008547008548,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.786324786324787,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.213675213675213,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.5568184407754383,
+              "pass": true
+            }
+          ],
+          "pass": true
+        },
+        {
+          "label": "middle",
+          "start": 73.366539,
+          "duration": 60,
+          "elapsedMs": 7415.1384000000035,
+          "artifacts": "gate/artifacts/Griphop-middle",
+          "bpm": 89.99999999999989,
+          "dpBpm": 89.75576662143844,
+          "knownBpm": 90,
+          "octaveFolded": false,
+          "offsetMs": 316.0795953976553,
+          "notes": 137,
+          "phasesMs": [
+            -0.3333333333334701,
+            -0.3333333333334701,
+            -0.3333333333334701
+          ],
+          "maxDensity": 3,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 1.1368683772161603e-13,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.2713704206238299,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 2.7755575615628914e-13,
+              "pass": true
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 99.27007299270073,
+              "pass": true
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 90.5084745762712,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 666,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.817518248175183,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.547445255474454,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.6332597558843995,
+              "pass": true
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "track": {
+        "name": "Bet You Can",
+        "file": "Bet You Can.mp3",
+        "bpm": 92,
+        "role": "tuning",
+        "category": "rock; live/drift unverified",
+        "isrc": "USUAN1200018",
+        "sha256": "0e06dc0e7a2f8b9824df4fd278c12d3beb19622ee69953c94a122aaccfad94be",
+        "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Bet%20You%20Can.mp3",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200018",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Bet You Can\" Kevin MacLeod (incompetech.com), CC BY 4.0. Gate overlays add analysis clicks and use excerpts."
+      },
+      "excerpts": [
+        {
+          "label": "first",
+          "start": 0,
+          "duration": 90,
+          "elapsedMs": 11413.154499999997,
+          "artifacts": "gate/artifacts/Bet-You-Can-first",
+          "bpm": 120.68999999999768,
+          "dpBpm": 121.48760330578618,
+          "knownBpm": 92,
+          "octaveFolded": false,
+          "offsetMs": 244.49228140708283,
+          "notes": 181,
+          "phasesMs": [
+            46.42928163061939,
+            112.42928163061946,
+            56.4292816306194
+          ],
+          "maxDensity": 5,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 28.68999999999768,
+              "pass": false
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.6608694223121339,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 66.00000000000276,
+              "pass": false
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 75,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 39.226519337016576,
+              "pass": false
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 98.09203142536475,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 870,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.861878453038674,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.41436464088398,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.03276358139963911,
+              "pass": false
+            }
+          ],
+          "pass": false
+        },
+        {
+          "label": "middle",
+          "start": 69.1347,
+          "duration": 60,
+          "elapsedMs": 7541.139600000002,
+          "artifacts": "gate/artifacts/Bet-You-Can-middle",
+          "bpm": 120.56999999999768,
+          "dpBpm": 121.48760330578618,
+          "knownBpm": 92,
+          "octaveFolded": false,
+          "offsetMs": 297.15312908729453,
+          "notes": 118,
+          "phasesMs": [
+            -52.81811395870081,
+            163.18188604129935,
+            -80.81811395870083
+          ],
+          "maxDensity": 4,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 28.569999999997677,
+              "pass": false
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.7610544130285488,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 244.00000000000296,
+              "pass": false
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 66.66666666666666,
+              "pass": false
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 42.3728813559322,
+              "pass": false
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 95.42372881355932,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 995,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.576271186440678,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.423728813559322,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.035792511673218425,
+              "pass": false
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "pass": false
+    },
+    {
+      "track": {
+        "name": "Deliberate Thought",
+        "file": "Deliberate Thought.mp3",
+        "bpm": 69,
+        "role": "hold-out",
+        "category": "sparse",
+        "isrc": "USUAN1100261",
+        "sha256": "243d5543c930bf54e95868bab9da860e67ce8835e3698881fda287bc58cc343f",
+        "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Deliberate%20Thought.mp3",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100261",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Deliberate Thought\" Kevin MacLeod (incompetech.com), CC BY 4.0. Gate overlays add analysis clicks and use excerpts."
+      },
+      "excerpts": [
+        {
+          "label": "first",
+          "start": 0,
+          "duration": 90,
+          "elapsedMs": 11142.633999999998,
+          "artifacts": "gate/artifacts/Deliberate-Thought-first",
+          "bpm": 137.99999999999596,
+          "dpBpm": 138.24451410658315,
+          "knownBpm": 69,
+          "octaveFolded": true,
+          "offsetMs": 19.62961520841609,
+          "notes": 320,
+          "phasesMs": [
+            -1.391304347832251,
+            -0.39130434783225115,
+            -1.391304347832251
+          ],
+          "maxDensity": 5,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 4.035882739117369e-12,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.17718413520811346,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 1.000000000003387,
+              "pass": true
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 82.5,
+              "pass": true
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 97.8675645342312,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 652,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0.625,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.40381545934467833,
+              "pass": true
+            }
+          ],
+          "pass": true
+        },
+        {
+          "label": "middle",
+          "start": 58.727999999999994,
+          "duration": 60,
+          "elapsedMs": 7590.757099999995,
+          "artifacts": "gate/artifacts/Deliberate-Thought-middle",
+          "bpm": 137.99999999999605,
+          "dpBpm": 138.24451410658313,
+          "knownBpm": 69,
+          "octaveFolded": true,
+          "offsetMs": 422.0960797232518,
+          "notes": 200,
+          "phasesMs": [
+            -1.3913043478321123,
+            -0.3913043478321124,
+            -0.3913043478321124
+          ],
+          "maxDensity": 5,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 3.950617610826157e-12,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.17718413520803097,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 1.0000000000028597,
+              "pass": true
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 100,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 83,
+              "pass": true
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 98.8135593220339,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 435,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.399829952573137,
+              "pass": true
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "track": {
+        "name": "Cut and Run",
+        "file": "Cut and Run.mp3",
+        "bpm": 109,
+        "role": "hold-out",
+        "category": "unseen electronic",
+        "isrc": "USUAN1100851",
+        "sha256": "ddfa5637036e97a313a2e7a01d37d00f85226469cf4df896c83da07f7f2c353e",
+        "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Cut%20and%20Run.mp3",
+        "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100851",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "\"Cut and Run\" Kevin MacLeod (incompetech.com), CC BY 4.0. Gate overlays add analysis clicks and use excerpts."
+      },
+      "excerpts": [
+        {
+          "label": "first",
+          "start": 0,
+          "duration": 90,
+          "elapsedMs": 10955.603900000002,
+          "artifacts": "gate/artifacts/Cut-and-Run-first",
+          "bpm": 107.14999999999911,
+          "dpBpm": 107.38636363636265,
+          "knownBpm": 109,
+          "octaveFolded": false,
+          "offsetMs": 0.45241187805758115,
+          "notes": 190,
+          "phasesMs": [
+            32.01866542230312,
+            75.01866542230316,
+            -6.981334577696897
+          ],
+          "maxDensity": 4,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 1.8500000000008896,
+              "pass": true
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.2205913545156669,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 82.00000000000362,
+              "pass": false
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 97.72727272727273,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 43.684210526315795,
+              "pass": false
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 87.42985409652077,
+              "pass": false
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 560,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 1.0526315789473684,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 2,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.736842105263158,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.263157894736842,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.36647859827011375,
+              "pass": false
+            }
+          ],
+          "pass": false
+        },
+        {
+          "label": "middle",
+          "start": 77.4155125,
+          "duration": 60,
+          "elapsedMs": 6900.448199999999,
+          "artifacts": "gate/artifacts/Cut-and-Run-middle",
+          "bpm": 106.91999999999899,
+          "dpBpm": 107.38636363636334,
+          "knownBpm": 109,
+          "octaveFolded": false,
+          "offsetMs": 132.61434348358014,
+          "notes": 163,
+          "phasesMs": [
+            276.4163860830505,
+            -173.58361391694982,
+            246.41638608305053
+          ],
+          "maxDensity": 4,
+          "rows": [
+            {
+              "check": "Tempo error (BPM)",
+              "value": 2.0800000000010073,
+              "pass": false
+            },
+            {
+              "check": "Estimator disagreement (%)",
+              "value": 0.4361799816351978,
+              "pass": true
+            },
+            {
+              "check": "Thirds phase drift (ms)",
+              "value": 141.16722783389974,
+              "pass": false
+            },
+            {
+              "check": "Top-decile coverage (%)",
+              "value": 87.5,
+              "pass": true
+            },
+            {
+              "check": "Salient-note precision (%)",
+              "value": 59.50920245398773,
+              "pass": false
+            },
+            {
+              "check": "Density-valid windows (%)",
+              "value": 97.96610169491525,
+              "pass": true
+            },
+            {
+              "check": "Max same-lane run",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min same-lane gap (ms)",
+              "value": 1122,
+              "pass": true
+            },
+            {
+              "check": "Chord share (%)",
+              "value": 0,
+              "pass": true
+            },
+            {
+              "check": "Max chord",
+              "value": 1,
+              "pass": true
+            },
+            {
+              "check": "Min lane share (%)",
+              "value": 24.539877300613497,
+              "pass": true
+            },
+            {
+              "check": "Max lane share (%)",
+              "value": 25.153374233128833,
+              "pass": true
+            },
+            {
+              "check": "Confidence",
+              "value": 0.351362208160106,
+              "pass": false
+            }
+          ],
+          "pass": false
+        }
+      ],
+      "pass": false
+    }
+  ]
+}

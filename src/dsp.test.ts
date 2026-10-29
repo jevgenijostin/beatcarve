@@ -3,6 +3,15 @@ import { analyze,fft,foldTempo } from './dsp.ts';
 import { generateChart } from './chart.ts';
 import { synth } from './test-helpers/synth.ts';
 describe('headless pipeline',()=>{
+  it('does not let an unrelated onset authorize snapping a candidate away from its source',()=>{
+    const f=synth(100),a=analyze(f.samples,f.sr);
+    const chart=generateChart({...a,bpm:100,offset:0,duration:2,onsets:[
+      {t:0,strength:1,bands:[1,0,0]},
+      {t:.1,strength:10,bands:[10,0,0]},
+      {t:1.2,strength:20,bands:[20,0,0]},
+    ]});
+    expect(chart.notes.map(n=>n.t)).toEqual([1200]);
+  });
   it('FFT resolves a bin-centered sinusoid',()=>{const x=Float64Array.from({length:1024},(_,i)=>Math.sin(2*Math.PI*8*i/1024));const f=fft(x);expect(Math.abs(f.im[8])).toBeCloseTo(512,6);});
   for(const bpm of [70,90,120,128,140,170])it('click '+bpm+': folded tempo ±1 BPM, offset ±20 ms',()=>{
     const f=synth(bpm),a=analyze(f.samples,f.sr),p=60/a.bpm;

@@ -9,8 +9,8 @@ export function generateChart(a:Analysis,difficulty:'Normal'|'Easy'='Normal',bpm
     const eighth=offset+Math.round((o.t-offset)/(period/2))*period/2;
     const sixteenth=offset+Math.round((o.t-offset)/(period/4))*period/4;
     const t=o.strength>=(strengths[Math.floor(strengths.length*.9)]??Infinity)&&Math.abs(sixteenth-o.t)<=.03?sixteenth:eighth;
-    return {...o,t:Math.round(t*1000)/1000};
-  }).filter(o=>o.t>=0&&o.t<a.duration&&a.onsets.some(p=>Math.abs(p.t-o.t)<=.06));
+    return {...o,sourceTime:o.t,t:Math.round(t*1000)/1000};
+  }).filter(o=>o.t>=0&&o.t<a.duration&&Math.abs(o.sourceTime-o.t)<=.06);
   const retained:typeof candidates=[];
   for(const o of candidates.sort((x,y)=>y.strength-x.strength||x.t-y.t)) {
     if(retained.some(p=>Math.abs(p.t-o.t)<.001))continue;
