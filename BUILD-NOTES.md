@@ -20,7 +20,7 @@ Phase 3–5 game: browser file decode and drop, analysis worker, four-lane canva
 
 Vitest covers frozen DSP/chart invariants plus Perfect/Great boundaries, clock-based judgments independent of frames, median calibration with outliers, export schema, HMAC signatures/tampering/expiry/tier checks, activation/reload/deactivation.
 Playwright uses generated WAV audio through real browser decoding and the real worker; checks controls, confidence, injected-clock keyboard scoring, wrong-time misses, blur pause, results, licensed JSON download, calibration persistence/reset, malformed audio, six-minute cap, and absence of test hooks without ?test=1.
-Final local and hosted results are recorded below after completion.
+Final local and hosted results are recorded below.
 
 ## Gate result and limits
 
@@ -39,6 +39,8 @@ Fun, musical accuracy against independent annotation, human playability, real-de
 ## Deployment
 
 Target: https://jevgenijostin.github.io/beatcarve/
-Direct main push and ubuntu-latest/windows-latest CI + Pages verification pending completion of this build.
+Game commit 0bd4bdc was pushed directly to main. [CI run 40952333100](https://github.com/jevgenijostin/beatcarve/actions/runs/40952333100) succeeded on both ubuntu-latest and windows-latest: typecheck, lint, 40 unit tests, four Playwright tests, and production build. Pages deployment succeeded. No branch/PR or AI-attribution trailers.
 
 Local final checks: 40 Vitest tests passed; typecheck, lint, production build, and four Chromium Playwright tests passed. Setup screenshot inspected. The first scoring assertion assumed ten Easy notes; inspection showed nine generated notes and nine Perfect hits, zero misses. The harness now asserts scoring against the generated count (minimum eight), without altering the generator.
+
+Public-site check: HTTP 200; loaded the local Griphop MP3 through the deployed browser decoder and worker (90.00 BPM, 487 notes, 62% confidence), started playback, sent a keyboard press, and verified pause. No browser page errors; gameplay screenshot inspected. This is a deployment mechanics check, not a new gate evaluation or human listening test. This documentation-only follow-up skips unchanged application CI.
